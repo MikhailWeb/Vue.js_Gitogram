@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "username": "Joshua_1",
+      "avatar": "https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png",
+      "title": "Vue.js",
+      "description":  "<b>JavaScript</b> framework for building interactive web applications",
+      "stars": "330k",
+      "forks": 25,
+      "date": "16.08.2021",
+      "issues": [
+        {
+          "id": 1,
+          "username": "Joshua_1",
+          "text": "Comment #1"
+        },
+        {
+          "id": 2,
+          "username": "Camille",
+          "text": "Comment #2"
+        },
+        {
+          "id": 3,
+          "username": "Marselle",
+          "text": "Comment #3"
+        }
+      ]
+    },
+    {
+        "id": 2,
+        "username": "Camille",
+        "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png",
+        "title": "React.js",
+        "description":  "<b>Open source</b> JavaScript library used for designing user interfaces",
+        "stars": "220k",
+        "forks": 8,
+        "date": "10.05.2021",
+        "issues": [
+          {
+            "id": 1,
+            "username": "Piter",
+            "text": "Comment #1"
+          },
+          {
+            "id": 2,
+            "username": "Andrew",
+            "text": "Comment #2"
+          }
+        ]
+      }
+  ]

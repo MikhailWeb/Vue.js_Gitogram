@@ -1,0 +1,28 @@
+.feed-user {
+    display: flex;
+    align-items: center;
+
+    img {      
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;  
+    }
+
+    .username {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 15px;
+    }
+}
+
+.c-feed {
+    margin-top: 8px;
+}
+
+.feed-bottom {
+margin-top: 8px;
+margin-bottom: 28px;
+color: rgba(27, 26, 26, 0.4);
+font-size: 12px;
+}
+  
