@@ -19,10 +19,27 @@
     margin-top: 8px;
 }
 
+.feeds {
+    width: 980px;
+    margin: 20px auto;
+}
+
+.feedbody-block {    
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e2e0e0;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;    
+}
+
+.feed-title {
+    font-size: 26px; 
+    font-weight: bold;
+}
+
 .feed-bottom {
 margin-top: 8px;
 margin-bottom: 28px;
 color: rgba(27, 26, 26, 0.4);
 font-size: 12px;
 }
-  

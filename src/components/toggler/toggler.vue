@@ -11,9 +11,7 @@
 import { icon } from '../../icons'
 
 export default {
-  components: {
-    icon
-  },
+  components: { icon },
   data () {
     return {
       isOpened: false

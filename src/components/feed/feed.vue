@@ -45,4 +45,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped src="./feed.scss"></style>
+<style lang="scss" src="./feed.scss"></style>

@@ -26,18 +26,17 @@
             </template>
             <template #content>
                 <ul class="stories-list">
-                    <li class="stories-item" v-for="story in stories" :key="story.id">
+                    <li class="stories-item" v-for="item in items" :key="item.id">
                         <story-user-item
-                        :avatar="story.avatar"
-                        :username="story.username"
-                        @onPress="handlePress(story.id)"
-                        />
+                          :username="item.owner.login"
+                          :avatar="item.owner.avatar_url"
+                          @onPress="handlePress(item.id)"
+                         />
                     </li>
                 </ul>
             </template>
         </topline>
-    </div>
-    <div class="feeds">
+      <div class="feeds">
       <ul class="feed-list">
         <li class="feed" v-for="feed in feedsData" :key="feed.id">
           <feed v-bind:feed-data="feed">
@@ -52,6 +51,7 @@
         </li>
       </ul>
     </div>
+    </div>
 </template>
 
 <script>
@@ -62,9 +62,18 @@ import stories from './data.json'
 import feed from '../../components/feed/feed.vue'
 import feedsData from './feeds.json'
 import counter from '../../components/counter/counter.vue'
+import * as api from '../../api'
 
 export default {
   name: 'feeds',
+  async created () {
+    try {
+      const { data } = await api.trendings.getTrendings()
+      this.items = data.items
+    } catch (error) {
+      console.log(error)
+    }
+  },
   components: {
     topline,
     icon,
@@ -75,7 +84,8 @@ export default {
   data () {
     return {
       stories,
-      feedsData
+      feedsData,
+      items: []
     }
   }
 }
