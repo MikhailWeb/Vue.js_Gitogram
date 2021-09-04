@@ -1,0 +1,37 @@
+.topline {
+   height: 100%;    
+}
+.c-topline {  
+    background: black;
+
+    h1 {
+        color: white;
+    }
+}
+
+.slide-item {
+    height: 100%;
+    // background-color: cadetblue;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: none;
+}
+
+.splide__arrow--prev {
+    left: 50%;
+    transform: translate(-240px, -50%);
+}
+
+.splide__arrow--next {
+    right: 50%;
+    transform: translate(240px, -50%);
+}
+
+.splide__arrow:disabled {
+    display: none;
+}
+
+.is-active > .slide-item {
+    transform: scale(1);
+    overflow-y: none;
+}

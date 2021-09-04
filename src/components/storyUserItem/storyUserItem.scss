@@ -2,4 +2,8 @@
     border-radius: 50%;
     width: 80px;
     overflow: hidden;
+
+    &:hover {
+        box-shadow: 0 0 15px 0 #9190df;
+    }
 }

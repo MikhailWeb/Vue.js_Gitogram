@@ -3,6 +3,7 @@
     min-width: 329px;
     border: 1px solid #CACACA;
     border-radius: 8px;
+    background: #fff;
 
     .header {
         height: 55px;
@@ -15,17 +16,23 @@
     .progress {
       margin: 10px 5px 10px 5px;
     }
+
+    .load {
+      text-align: center;
+      padding-top: 30px;
+    }
     
     .content {
-      max-height: 500px;
+      max-height: 480px;
       min-height: 455px;
-      overflow-y: auto;
+      overflow-y: auto;      
       padding: 18px;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.051) 100%);
     }
          
     .footer {
-      text-align:center;
+      min-height: 76px;
+      text-align: center;
       border-top: 1px solid #CACACA;
   
       .c-button {
@@ -34,4 +41,31 @@
         margin: 20px;
       }
     }
-  }
+}
+
+.slide-item {
+  height: 100%;
+  // background-color: cadetblue;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: none;
+}
+
+.splide__arrow--prev {
+  left: 50%;
+  transform: translate(-240px, -50%);
+}
+
+.splide__arrow--next {
+  right: 50%;
+  transform: translate(240px, -50%);
+}
+
+.splide__arrow:disabled {
+  display: none;
+}
+
+.is-active > .slide-item {
+  transform: scale(1);
+  overflow-y: none;
+}

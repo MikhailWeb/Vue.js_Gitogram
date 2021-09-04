@@ -1,15 +1,13 @@
 <template>
-    <div :class={active} class="c-progress">
+    <div :class="{ active }" class="c-progress">
         <div ref="indicator" class="indicator"></div>
     </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      active: false
-    }
+  props: {
+    active: Boolean
   },
   emits: ['onFinish'],
   methods: {
@@ -19,10 +17,8 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      this.active = true
+      this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
     })
-
-    this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
   },
   beforeUnmount () {
     this.$refs.indicator.removeEventListener('transitionend', this.emitOnFinish)

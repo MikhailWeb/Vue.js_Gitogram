@@ -2,22 +2,34 @@ import slider from './slider'
 
 export default {
   title: 'Slider',
-  components: { slider }
+  components: { slider },
+  argTypes: {
+    Avatar: {
+      control: { type: 'text' }
+    },
+    Username: {
+      control: { type: 'text' }
+    },
+    Active: {
+      control: { type: 'boolean' }
+    }
+  }  
 }
 
-export const content = () => ({
+export const content = (args) => ({
   components: { slider },
-  template: `<slider>
-    <template #content>
-      <img src="https://picsum.photos/320/240" />
-      <p>The easiest way to get .NET 6 Preview 4 is to install the maui-check dotnet tool from CLI and follow the instructions.</p>
-      <p>For running on Mac you'll currently use your favorite text editor and terminal to edit and run apps. We expect Visual Studio for Mac .NET 6 support to begin arriving mid-year.</p>
-      <p>In Preview 4 we enable push/pop navigation with NavigationPage. We added a concrete implementation of IWindow, and completed porting ContentPage from Xamarin.Forms</p>
-      <p>For running on Mac you'll currently use your favorite text editor and terminal to edit and run apps. We expect Visual Studio for Mac .NET 6 support to begin arriving mid-year.</p>
-    </template>
-  </slider>`
+  data () {
+    return { args }
+  },
+  template: `<slider :active='${args.Active}' :data="{ id: 0, userAvatar: '${args.Avatar}', username: '${args.Username}', content: '' }" />`
 })
 
 content.story = {
   name: 'Default view'
+}
+
+content.args = {
+  Avatar: 'https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png',
+  Username: 'Andrew',
+  Active: true
 }

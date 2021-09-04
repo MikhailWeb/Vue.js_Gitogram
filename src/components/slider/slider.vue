@@ -2,12 +2,16 @@
   <div class="slider">
       <div class="header">
         <div class="progress">
-            <x-progress />
+            <x-progress :active="active" @onFinish="$emit('onFinishProgress')"/>
         </div>
-        <avatar title="React.reposit" src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png" alt="Avatar" />
+        <avatar :title="data.username" :src="data.userAvatar" alt="Avatar" />
       </div>
       <div class="content">
-        <slot name="content"></slot>
+        <div class="load" v-if="loading">loading...</div>
+        <div class="text" v-else>
+          <div v-if="data.content?.length" v-html="data.content"></div>
+          <placeholder v-else />
+        </div>
       </div>
       <div class="footer">
         <x-button>Follow</x-button>
@@ -20,13 +24,25 @@
 import progress from '../progress/progress.vue'
 import avatar from '../avatar/avatar.vue'
 import button from '../button/button.vue'
+import placeholder from '../placeholder'
 
 export default {
   name: 'Slider',
   components: {
     xProgress: progress,
     avatar,
-    xButton: button
+    xButton: button,
+    placeholder
+  },
+  emits: ['onFinishProgress'],
+  props: {
+    active: Boolean,
+    loading: Boolean,
+    data: {
+      type: Object,
+      required: true,
+      default: () => ({})
+    }
   }
 }
 

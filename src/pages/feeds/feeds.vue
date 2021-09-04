@@ -7,14 +7,14 @@
               </div>
               <div class="icons-block">
                   <div class="icon">
-                    <a href="#home">
-                          <icon name='home' />
-                    </a>
+                    <router-link to="/">
+                        <icon name='home' />
+                    </router-link>
                   </div>
                   <div class="icon">
-                    <a href="#profile">
+                    <router-link to="/profile">
                           <icon name='userAvatar' />
-                    </a>
+                    </router-link>
                   </div>
                   <div class="icon">
                     <a href="#exit">
@@ -26,11 +26,11 @@
             </template>
             <template #content>
                 <ul class="stories-list">
-                    <li class="stories-item" v-for="item in items" :key="item.id">
+                    <li class="stories-item" v-for="trending in trendings" :key="trending.id">
                         <story-user-item
-                          :username="item.owner.login"
-                          :avatar="item.owner.avatar_url"
-                          @onPress="handlePress(item.id)"
+                          :username="trending.owner.login"
+                          :avatar="trending.owner.avatar_url"
+                          @onPress="$router.push({name: 'stories', params: {initSlide: trending.id}})"
                          />
                     </li>
                 </ul>
@@ -62,18 +62,10 @@ import stories from './data.json'
 import feed from '../../components/feed/feed.vue'
 import feedsData from './feeds.json'
 import counter from '../../components/counter/counter.vue'
-import * as api from '../../api'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'feeds',
-  async created () {
-    try {
-      const { data } = await api.trendings.getTrendings()
-      this.items = data.items
-    } catch (error) {
-      console.log(error)
-    }
-  },
   components: {
     topline,
     icon,
@@ -86,6 +78,23 @@ export default {
       stories,
       feedsData,
       items: []
+    }
+  },
+  computed: {
+    ...mapState({
+      trendings: state => state.trendings.data
+    })
+  },
+  methods: {
+    ...mapActions({
+      fetchTrendings: 'trendings/fetchTrendings'
+    })
+  },
+  async created () {
+    try {
+      await this.fetchTrendings()
+    } catch (error) {
+      console.log(error)
     }
   }
 }
