@@ -9,15 +9,16 @@ export default {
   }
 }
 
-const info = {
+const info = {owner: [
+  {
   id: 1,
-  username: 'Joshua_1',
-  avatar: 'https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png',
+  login: 'Joshua_1',
+  avatar_url: 'https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png',
   title: 'Vue.js',
   description: '<b>JavaScript</b> framework for building interactive web applications',
-  stars: '330k',
+  stars: 350,
   forks: 25,
-  date: '16.08.2021',
+  created_at: '16.08.2021',
   issues: [
     {
       id: 1,
@@ -36,6 +37,8 @@ const info = {
     }
   ]
 }
+]
+}
 
 export const Default = () => ({
   components: {
@@ -50,8 +53,8 @@ export const Default = () => ({
   template: `<feed v-bind:feed-data="info">
                 <template #feedbody>
                     <div class="feedbody-block">
-                    <div class="feed-title">{{ info.title }}</div>
-                    <div v-html="info.description"></div>
+                    <div class="feed-title">{{ info.owner.title }}</div>
+                    <div v-html="info.owner.description"></div>
                     <counter v-bind:feed-object="info" />
                     </div>
                 </template>

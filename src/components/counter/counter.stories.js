@@ -4,7 +4,7 @@ export default {
   title: 'Counter',
   components: { counter },
   argTypes: {
-    stars: {
+    stargazers_count: {
       control: { type: 'number' }
     },
     forks: {
@@ -18,11 +18,11 @@ export const Default = (args) => ({
   data () {
     return { args }
   },
-  template: `<counter v-bind:feed-object="{id: 1, stars: ${args.stars}, forks: ${args.forks}}" />`
+  template: `<counter v-bind:feed-object="{id: 1, stargazers_count: ${args.stargazers_count}, forks: ${args.forks}}" />`
 })
 
 Default.args = {
-  stars: 350,
+  stargazers_count: 350,
   forks: 20
 }
 

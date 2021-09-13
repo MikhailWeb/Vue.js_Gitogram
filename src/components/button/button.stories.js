@@ -7,8 +7,8 @@ export default {
     text: {
       control: { type: 'text' }
     },
-    hoverText: {
-      control: { type: 'text' }
+    loading: {
+      control: { type: 'boolean' }
     }
   }
 }
@@ -23,7 +23,7 @@ export const cButton = (args) => ({
 
 cButton.args = {
   text: 'Follow',
-  hoverText: 'Unfollow'
+  loading: false
 }
 
 cButton.story = {

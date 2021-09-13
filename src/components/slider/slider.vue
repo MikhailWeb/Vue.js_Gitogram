@@ -9,12 +9,15 @@
       <div class="content">
         <div class="load" v-if="loading">loading...</div>
         <div class="text" v-else>
-          <div v-if="data.content?.length" v-html="data.content"></div>
-          <placeholder v-else />
+          <div v-if="data.content && data.content.length" v-html="data.content"></div>
+          <placeholder :imageblock="true" v-else />
         </div>
       </div>
       <div class="footer">
-        <x-button>Follow</x-button>
+        <x-button disabled
+          :loading="data.following.loading"
+          :theme="data.following.status ? 'gray' : 'green'"
+          @click="$emit(data.following.status ? 'onUnfollow' : 'onFollow', data.id)">{{ data.following.status ? 'Unfollow' : 'Follow' }}</x-button>
       </div>
   </div>
 </template>
@@ -24,7 +27,7 @@
 import progress from '../progress/progress.vue'
 import avatar from '../avatar/avatar.vue'
 import button from '../button/button.vue'
-import placeholder from '../placeholder'
+import placeholder from '../placeholder/placeholder.vue'
 
 export default {
   name: 'Slider',
@@ -34,7 +37,7 @@ export default {
     xButton: button,
     placeholder
   },
-  emits: ['onFinishProgress'],
+  emits: ['onFinishProgress', 'onFollow', 'onUnfollow'],
   props: {
     active: Boolean,
     loading: Boolean,
@@ -45,7 +48,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss" src='./slider.scss'></style>

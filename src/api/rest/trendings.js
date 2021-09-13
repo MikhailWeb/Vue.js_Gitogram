@@ -8,7 +8,7 @@ export const getTrendings = (lang = 'javascript') => {
   const weekAgo = new Date(Date.now() - weekMS)
 
   const formattedDate = [
-  weekAgo.getFullYear(),
+    weekAgo.getFullYear(),
     addStartingZero(weekAgo.getMonth() + 1),
     addStartingZero(weekAgo.getDate())
   ].join('-')

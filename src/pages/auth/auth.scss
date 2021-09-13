@@ -1,0 +1,80 @@
+.content {
+    text-align: center;
+
+  .app-title {
+    margin-top: 8%;
+    top: 10%;
+    text-align: center;
+    
+    h1 {
+        font-size: 28pt;
+    }
+  }
+
+  .slogan {
+    font-family: Inter,Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #6f6f6f;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .image {
+      margin-top: 50px;
+      text-align: center;
+
+      img {
+        display: inline;       
+      }
+  }
+
+}
+
+.auth-btn {
+    margin-top: 30px;
+    width: 252px;
+    height: 44px;
+    background-color: #31AE54;
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+
+    .btn-title {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: -0.15px;
+
+        color: #FFFFFF;
+        display: inline;        
+    }
+
+    .icon {
+        display: inline;
+        float: right;
+    }
+}
+
+.footer {
+    height: 44px;
+    background: #FFFFFF;
+    box-shadow: 0px -0.33px 0px rgba(60, 60, 67, 0.29);
+    text-align: center;
+       
+    .subscribe {                
+      font-family: Inter,Helvetica,sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: -0.01px;
+      color: #6f6f6f;
+    }
+}

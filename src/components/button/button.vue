@@ -1,29 +1,29 @@
 <template>
     <button
         :class="[
-           'c-button', `theme-green`,
-           {'hover-text': withHoverText}
-        ]"
-        :data-hover-text="hoverText"
-    >
+           'c-button',
+           `theme-${theme}`,
+           { loading }
+        ]">
         <span class="btn-text">
-            <slot></slot>
+          <spinner v-if='loading' />
+          <slot v-else></slot>
         </span>
     </button>
 </template>
 
 <script>
+import spinner from '../spinner/spinner.vue'
+
 export default {
   name: 'Button',
-  props: {
-    hoverText: {
-      type: String
-    }
+  components: {
+    spinner
   },
-  computed: {
-    withHoverText () {
-      return this.hoverText?.length
-    }
+  props: {
+    theme: { type: String },
+    loading: { type: Boolean },
+    disabled: { type: Boolean }
   }
 }
 </script>

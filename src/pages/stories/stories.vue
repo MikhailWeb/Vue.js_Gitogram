@@ -19,6 +19,8 @@
                     :active="SlideNdx === index"
                     :loading="(SlideNdx === index) && loading"
                     @onFinishProgress="goSlide(index + 1)"
+                    @onFollow="starRepo"
+                    @onUnfollow="unStarRepo"
                     />
                 </div>
             </splide-slide>
@@ -71,7 +73,9 @@ export default {
   methods: {
     ...mapActions({
       fetchTrendings: 'trendings/fetchTrendings',
-      fetchReadme: 'trendings/fetchReadme'
+      fetchReadme: 'trendings/fetchReadme',
+      starRepo: 'trendings/starRepo',
+      unStarRepo: 'trendings/unStarRepo'
     }),
     async fetchReadmeCurPage () {
       if (this.SlideNdx >= this.trendings.length) {
@@ -85,7 +89,8 @@ export default {
         id: obj.id,
         userAvatar: obj.owner?.avatar_url,
         username: obj.owner?.login,
-        content: obj.readme
+        content: obj.readme,
+        following: obj.following
       }
     },
     async loadReadme (splide) {

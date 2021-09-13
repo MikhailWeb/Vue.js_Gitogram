@@ -1,5 +1,5 @@
 <template>
-  <div class="placeholder">
+  <div class="placeholder" :class="{ imageblock }">
     <div class="block-image"></div>
     <div class="block-text-177"></div>
     <div class="block-text-218"></div>
@@ -9,7 +9,9 @@
 
 <script>
 export default {
-  //
+  props: {
+    imageblock: Boolean
+  }
 }
 </script>
 

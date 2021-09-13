@@ -1,11 +1,31 @@
 .c-button {
+    cursor: pointer;
     background-color: #31AE54;
     color: #fff;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     font-size: 18px;
+    width: 270px;
+    height: 44px;
 
     &:hover{
         background-color: #a09e9e;
     }
+}
+
+.theme {
+    &-green {
+        background-color: #31AE54;
+    }
+    &-gray {
+        background-color: #a09e9e;
+    }
+}
+
+.loading {
+    cursor: progress;
+}
+
+.btn-text .icon {
+    display: inline-block;
 }

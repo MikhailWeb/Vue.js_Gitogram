@@ -1,20 +1,20 @@
 import slider from './slider'
 
-export default {
-  title: 'Slider',
-  components: { slider },
-  argTypes: {
-    Avatar: {
-      control: { type: 'text' }
-    },
-    Username: {
-      control: { type: 'text' }
-    },
-    Active: {
-      control: { type: 'boolean' }
-    }
-  }  
-}
+// export default {
+//   title: 'Slider',
+//   components: { slider },
+//   argTypes: {
+//     Avatar: {
+//       control: { type: 'text' }
+//     },
+//     Username: {
+//       control: { type: 'text' }
+//     },
+//     Active: {
+//       control: { type: 'boolean' }
+//     }
+//   }  
+// }
 
 export const content = (args) => ({
   components: { slider },
