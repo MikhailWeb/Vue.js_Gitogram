@@ -13,7 +13,20 @@ export default [
   {
     path: '/profile',
     name: 'profile',
-    component: profile
+    redirect: { name: 'user-repos' },
+    component: profile,
+    children: [
+      {
+        path: 'repos',
+        name: 'user-repos',
+        component: () => import('../pages/profile/repos')
+      },
+      {
+        path: 'following',
+        name: 'user-following',
+        component: () => import('../pages/profile/following')
+      }
+    ]
   },
   {
     path: '/stories',

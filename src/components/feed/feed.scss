@@ -19,6 +19,22 @@
     margin-top: 8px;
 }
 
+.right-block {
+
+    .c-feed {
+        margin-top: 8px;
+        display: none;
+    }
+
+    .feed-top {
+        display: none;
+    }
+
+    .feed-bottom {
+        display: none;
+    }
+}
+
 .feeds {
     width: 980px;
     margin: 20px auto;

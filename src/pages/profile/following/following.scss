@@ -1,0 +1,50 @@
+h3 {
+
+    height: 28px;
+    left: 8.4%;
+    top: calc(50% - 28px/2 - 332px);
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 28px;
+
+    margin-bottom: 30px;
+
+    color: #262626;
+}
+
+.followings {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.following-block {
+   min-width: 700px; 
+   display: flex;   
+   justify-content: space-between;
+   margin-bottom: 32px;
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 18px;
+
+    .user-login {
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+        color: black;
+    }
+
+    .user-type {
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+}

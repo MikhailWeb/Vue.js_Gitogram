@@ -1,10 +1,5 @@
 <template>
-  <div class="feed-top">
-    <div class="feed-user">
-      <img :src="feedData.owner.avatar_url" />
-      <div class="username">{{ feedData.owner.login }}</div>
-    </div>
-  </div>
+  
   <div class="feed-block">
     <slot name="feedbody" />
     <div class="c-feed">
